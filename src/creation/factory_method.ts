@@ -14,9 +14,6 @@ export class ChatChannel implements Channel {
   }
 }
 
-// ChannelFactory.createNotification('Chat')
-// ChannelFactory.createNotification('Email')
-
 export class ChannelFactory {
   public static createNotification(type: 'Chat' | 'Email'): Channel {
     switch (type) {
@@ -27,3 +24,9 @@ export class ChannelFactory {
     }
   }
 }
+
+const chat = ChannelFactory.createNotification('Chat');
+chat.send('example', 'hello world!');
+
+const email = ChannelFactory.createNotification('Email');
+email.send('example', 'hello world!');
