@@ -25,7 +25,7 @@ export class ChatChannel implements Channel {
 
 export class ChannelFactory {
 
-    public static createNotification(type: 'Chat' | 'Email') {
+    public static createNotification(type: 'Chat' | 'Email'): Channel {
         switch (type) {
             case 'Chat':
                 return new ChatChannel();
